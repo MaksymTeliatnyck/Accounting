@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="Accounting.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0,Profile=Client"/>
+  </startup>
+
+  <connectionStrings>
+    <add name="Accounting.Properties.Settings.ConnectionString" connectionString="character set=WIN1251;data source=server-tfs;initial catalog=tvm_db;user id=sysdba;password=masterkey;dialect=3;pooling=True;connectionlifetime=300"
+      providerName="FirebirdSql.Data.FirebirdClient" />
+    <add name="Accounting.Properties.Settings.ConnectionStringDebug"
+      connectionString="character set=WIN1251;data source=server-tfs;initial catalog=tvm_db;user id=sysdba;password=masterkey;dialect=3;pooling=True;connectionlifetime=300"
+      providerName="FirebirdSql.Data.FirebirdClient" />
+  </connectionStrings>
+
+  <userSettings>
+    <Accounting.Properties.Settings>
+      <setting name="ExpDate" serializeAs="String">
+        <value>01.01.2020</value>
+      </setting>
+      <setting name="PaymentDate" serializeAs="String">
+        <value>2012-01-01</value>
+      </setting>
+      <setting name="KeybrdLang" serializeAs="String">
+        <value>ru-RU</value>
+      </setting>
+      <setting name="ordersFmType" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="ReceiptType" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="Account63TypeReportsFm" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="Flag1" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="Flag2" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="Flag3" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="Flag4" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="ReportBeginDate" serializeAs="String">
+        <value>2012-01-01</value>
+      </setting>
+      <setting name="ReportEndDate" serializeAs="String">
+        <value>2012-01-31</value>
+      </setting>
+    </Accounting.Properties.Settings>
+  </userSettings>
+
+</configuration>
