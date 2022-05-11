@@ -9,6 +9,7 @@ namespace Accounting
         public bankAccountsRBFm()
         {
             InitializeComponent();
+
         }
 
         private void addMenuItem_Click(object sender, EventArgs e)
