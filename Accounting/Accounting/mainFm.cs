@@ -22,9 +22,9 @@ namespace Accounting
             InitializeComponent();
 
 #if DEBUG
-            dataModule = new DataModule("sysdba", "masterkey", "TVM_DB", "server-tfs");
+            dataModule = new DataModule("sysdba", "masterkey", "TVM_DB", "10.0.0.50");
 #else
-            dataModule = new DataModule("sysdba", "masterkey", "TVM_DB", "server-tfs");
+            dataModule = new DataModule("sysdba", "masterkey", "TVM_DB", "10.0.0.50");
 #endif
 
             dataModule.InitAdapter();
