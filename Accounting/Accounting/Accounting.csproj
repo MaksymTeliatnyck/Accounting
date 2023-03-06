@@ -18,7 +18,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\Server-TFS\Publish\Accounting\</PublishUrl>
+    <PublishUrl>\\SBD1\Publish\Accounting\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,12 +28,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\Server-TFS\Publish\Accounting\</InstallUrl>
-    <UpdateUrl>\\Server-TFS\Publish\Accounting\</UpdateUrl>
+    <InstallUrl>\\SBD1\Publish\Accounting\</InstallUrl>
+    <UpdateUrl>\\SBD1\Publish\Accounting\</UpdateUrl>
     <ProductName>АИС %27%27Техвагонмаш%27%27 - Бухгалтерский учёт</ProductName>
     <PublisherName>НПФ %27%27Техвагонмаш%27%27</PublisherName>
-    <MinimumRequiredVersion>1.0.0.451</MinimumRequiredVersion>
-    <ApplicationRevision>452</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.454</MinimumRequiredVersion>
+    <ApplicationRevision>454</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

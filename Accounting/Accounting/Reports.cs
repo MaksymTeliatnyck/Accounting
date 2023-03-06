@@ -1919,14 +1919,18 @@ namespace Accounting
                 MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            
-            // если тут проблема со строкой, то скорее всего засунули контрагента с null єдрпо
-            var orderSource = reportTable.AsEnumerable()
+            var filterOrderSource = reportTable.AsEnumerable().Where(c => c.Field<string>("ContractorSrn")!=null).CopyToDataTable();
+            var orderSource = filterOrderSource.AsEnumerable()
                                 .OrderBy(s => s["ContractorSrn"])
                                 .ThenBy(i => i["Contractor_Id"])
                                 .ThenBy(w => w["FlagDebitCredit"])
                                 .CopyToDataTable();
+            // если тут проблема со строкой, то скорее всего засунули контрагента с null єдрпо
+            /*var orderSource = reportTable.AsEnumerable().Where(flt => flt["ContractorSrn"]!= null)
+                                .OrderBy(s => s["ContractorSrn"])
+                                .ThenBy(i => i["Contractor_Id"])
+                                .ThenBy(w => w["FlagDebitCredit"])
+                                .CopyToDataTable();*/
 
             var workbook = Factory.GetWorkbook(TemplatesDir + "TemplateWithStamp.xls");
             var worksheet = workbook.Worksheets[0];
@@ -2883,7 +2887,9 @@ namespace Accounting
                         cells[vsS[HeaderColumn["Payment_Date"] - 1] + currentPosition].Value = reportTable.Rows[i]["Payment_Date"];
                         cells[vsS[HeaderColumn["PeriodPrice"] - 1] + currentPosition].Value = reportTable.Rows[i]["PeriodPrice"];
                         cells[vsS[HeaderColumn["Rate"] - 1] + currentPosition].Value = reportTable.Rows[i]["Rate"];
-                        cells[vsS[HeaderColumn["DebitSum" + (string)reportTable.Rows[i]["CurrencyName"]] - 1] + currentPosition].Value = reportTable.Rows[i]["PeriodPriceCurrency"];
+                        if (HeaderColumn.ContainsKey("DebitSumUSD") || HeaderColumn.ContainsKey("DebitSumEUR") || HeaderColumn.ContainsKey("DebitSumRUB"))
+                            cells[vsS[HeaderColumn["DebitSum" + (string)reportTable.Rows[i]["CurrencyName"]] - 1] + currentPosition].Value = reportTable.Rows[i]["PeriodPriceCurrency"];
+                        //cells[vsS[HeaderColumn["DebitSum" + (string)reportTable.Rows[i]["CurrencyName"]] - 1] + currentPosition].Value = reportTable.Rows[i]["PeriodPriceCurrency"];
                     }
                     else if ((int?)reportTable.Rows[i]["FlagDebitCredit"] == 2)
                     {

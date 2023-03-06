@@ -262,6 +262,7 @@
             this.gridBand1.Columns.Add(this.vendorCodeColumn);
             this.gridBand1.Columns.Add(this.vendorNameColumn);
             this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
             this.gridBand1.Width = 328;
             // 
             // vendorCodeColumn
@@ -306,6 +307,7 @@
             this.gridBand3.Columns.Add(this.invoiceNumColumn);
             this.gridBand3.Columns.Add(this.accountNumCol);
             this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
             this.gridBand3.Width = 418;
             // 
             // receiptNumColumn
@@ -370,6 +372,7 @@
             this.gridBand2.Columns.Add(this.totalWithVatColumn);
             this.gridBand2.Columns.Add(this.vatAccountColumn);
             this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 2;
             this.gridBand2.Width = 600;
             // 
             // сurrencyName
@@ -513,6 +516,7 @@
             this.gridBand4.Columns.Add(this.supplierColumn);
             this.gridBand4.Columns.Add(this.supplierProxyColumn);
             this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 3;
             this.gridBand4.Width = 320;
             // 
             // supplierColumn
@@ -556,6 +560,7 @@
             this.gridBand5.Columns.Add(this.orderDateColumn);
             this.gridBand5.Columns.Add(this.invoiceDateColumn);
             this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 4;
             this.gridBand5.Width = 180;
             // 
             // orderDateColumn
@@ -602,6 +607,7 @@
             this.gridBand7.Columns.Add(this.taxInvoiceColumn);
             this.gridBand7.Columns.Add(this.transportInvoiceColumn);
             this.gridBand7.Name = "gridBand7";
+            this.gridBand7.VisibleIndex = 5;
             this.gridBand7.Width = 80;
             // 
             // taxInvoiceColumn
@@ -657,6 +663,7 @@
             this.gridBand8.Columns.Add(this.checkedColumn);
             this.gridBand8.Columns.Add(this.typeColumn);
             this.gridBand8.Name = "gridBand8";
+            this.gridBand8.VisibleIndex = 6;
             this.gridBand8.Width = 255;
             // 
             // debitAccountColumn
@@ -1084,7 +1091,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearEndCBox.Location = new System.Drawing.Point(506, 12);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(121, 21);
@@ -1126,7 +1134,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearBeginCBox.Location = new System.Drawing.Point(106, 12);
             this.yearBeginCBox.Name = "yearBeginCBox";
             this.yearBeginCBox.Size = new System.Drawing.Size(121, 21);

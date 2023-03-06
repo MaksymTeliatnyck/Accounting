@@ -137,7 +137,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearEndCBox.Location = new System.Drawing.Point(441, 14);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(93, 21);
@@ -184,7 +185,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearBeginCBox.Location = new System.Drawing.Point(97, 14);
             this.yearBeginCBox.Name = "yearBeginCBox";
             this.yearBeginCBox.Size = new System.Drawing.Size(93, 21);
@@ -233,13 +235,13 @@
             this.rateColumn,
             this.customerOrderColumn});
             this.bankPaymentsGridView.GridControl = this.bankPaymentsGrid;
-            this.bankPaymentsGridView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.bankPaymentsGridView.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBIT_PRICECURRENCY", this.debitPriceCurrencyColumn, "")});
             this.bankPaymentsGridView.Name = "bankPaymentsGridView";
             this.bankPaymentsGridView.OptionsPrint.AutoWidth = false;
             this.bankPaymentsGridView.OptionsSelection.MultiSelect = true;
             this.bankPaymentsGridView.OptionsView.ColumnAutoWidth = true;
+            this.bankPaymentsGridView.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.bankPaymentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.bankPaymentsGridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.bankPaymentsGridView.OptionsView.ShowFooter = true;
@@ -259,6 +261,7 @@
             this.gridBand1.Columns.Add(this.partnerNameColumn);
             this.gridBand1.Columns.Add(this.customerOrderColumn);
             this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
             this.gridBand1.Width = 503;
             // 
             // partnerSrnColumn
@@ -315,6 +318,7 @@
             this.gridBand6.Columns.Add(this.paymentDateColumn);
             this.gridBand6.Columns.Add(this.paymentDocumentColumn);
             this.gridBand6.Name = "gridBand6";
+            this.gridBand6.VisibleIndex = 1;
             this.gridBand6.Width = 170;
             // 
             // paymentDateColumn
@@ -359,6 +363,7 @@
             this.gridBand5.Columns.Add(this.paymentAccountColumn);
             this.gridBand5.Columns.Add(this.purposeAccountColumn);
             this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 2;
             this.gridBand5.Width = 180;
             // 
             // paymentAccountColumn
@@ -400,6 +405,7 @@
             this.gridBand2.Columns.Add(this.debitColumn);
             this.gridBand2.Columns.Add(this.debitPriceCurrencyColumn);
             this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 3;
             this.gridBand2.Width = 200;
             // 
             // debitColumn
@@ -450,6 +456,7 @@
             this.gridBand3.Columns.Add(this.creditColumn);
             this.gridBand3.Columns.Add(this.creditPriceCurrencyColumn);
             this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 4;
             this.gridBand3.Width = 200;
             // 
             // creditColumn
@@ -499,6 +506,7 @@
             this.gridBand4.Columns.Add(this.currencyNameColumn);
             this.gridBand4.Columns.Add(this.rateColumn);
             this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 5;
             this.gridBand4.Width = 135;
             // 
             // currencyNameColumn
@@ -537,6 +545,7 @@
             this.gridBand7.Caption = "Додатково";
             this.gridBand7.Columns.Add(this.purposeColumn);
             this.gridBand7.Name = "gridBand7";
+            this.gridBand7.VisibleIndex = 6;
             this.gridBand7.Width = 300;
             // 
             // purposeColumn

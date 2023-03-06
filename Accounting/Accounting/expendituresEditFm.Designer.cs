@@ -156,6 +156,7 @@
             this.gridBand1.Columns.Add(this.gridColumn17);
             this.gridBand1.Columns.Add(this.gridColumn8);
             this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
             this.gridBand1.Width = 790;
             // 
             // gridColumn1
@@ -363,6 +364,7 @@
             this.gridBand2.Columns.Add(this.gridColumn13);
             this.gridBand2.Columns.Add(this.gridColumn16);
             this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 1;
             this.gridBand2.Width = 400;
             // 
             // gridColumn10
@@ -605,7 +607,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearEndCBox.Location = new System.Drawing.Point(490, 14);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(121, 21);
@@ -676,7 +679,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearCBox.Location = new System.Drawing.Point(95, 14);
             this.yearCBox.Name = "yearCBox";
             this.yearCBox.Size = new System.Drawing.Size(121, 21);

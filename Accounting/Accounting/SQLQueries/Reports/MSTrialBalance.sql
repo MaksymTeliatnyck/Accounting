@@ -10,8 +10,8 @@ LEFT OUTER JOIN
 (
     SELECT
         "Contractors"."Id" AS "Contractor_Id",
-        IIF(COALESCE("R"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0) < 0, ABS(COALESCE("R"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0)), NULL) AS "Begin_Debit",
-        IIF(COALESCE("R"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0) > 0, COALESCE("R"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0), NULL) AS "Begin_Credit"
+        IIF(COALESCE("R"."Price", 0) +COALESCE("R1"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0) < 0, ABS(COALESCE("R"."Price", 0)+ COALESCE("R1"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0)), NULL) AS "Begin_Debit",
+        IIF(COALESCE("R"."Price", 0) + COALESCE("R1"."Price", 0) +COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0) > 0, COALESCE("R"."Price", 0) +COALESCE("R1"."Price", 0) + COALESCE("Payment_Credit"."Price", 0) - COALESCE("P"."Price", 0), NULL) AS "Begin_Credit"
     FROM
         "Contractors"
     LEFT OUTER JOIN
@@ -28,12 +28,32 @@ LEFT OUTER JOIN
             --
             (Orders."Flag1" = @Flag1 OR Orders."Flag3" = @Flag3 OR Orders."Flag4" = @Flag4) AND
             Orders.Order_Date >= '31.03.2013' AND
-            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240
+            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240 AND Orders.DEBIT_ACCOUNT_ID <> 14  AND Orders.DEBIT_ACCOUNT_ID <> 18
         GROUP BY
             Orders.Vendor_Id
     ) AS "R"
     ON
         "R"."Contractor_Id" = "Contractors"."Id"
+	 LEFT OUTER JOIN
+    (
+        SELECT
+            Orders.Vendor_Id AS "Contractor_Id",
+            SUM(Orders.Total_Price) + COALESCE(SUM(Vat.Price), 0) AS "Price"
+        FROM
+            Orders, Vat
+        WHERE
+            Vat.Id = Orders.Id AND
+            Orders.Order_Date < @Start_Date AND
+            Orders.Checked = 0 AND
+            --
+            (Orders."Flag1" = @Flag1 OR Orders."Flag3" = @Flag3 OR Orders."Flag4" = @Flag4) AND
+            Orders.Order_Date >= '31.03.2013' AND
+            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.id = 57430
+        GROUP BY
+            Orders.Vendor_Id
+    ) AS "R1"
+    ON
+        "R1"."Contractor_Id" = "Contractors"."Id"
     LEFT OUTER JOIN
     (
         SELECT
@@ -109,7 +129,7 @@ LEFT OUTER JOIN
             --
             (Orders."Flag1" = @Flag1 OR Orders."Flag3" = @Flag3 OR Orders."Flag4" = @Flag4) AND
             Orders.Order_Date >= '31.03.2013' AND
-            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240
+            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240 AND Orders.DEBIT_ACCOUNT_ID <> 14  AND Orders.DEBIT_ACCOUNT_ID <> 18
         GROUP BY
             Orders.Vendor_Id
     ) AS "P"
@@ -157,7 +177,7 @@ LEFT OUTER JOIN
             --
             (Orders."Flag1" = @Flag1 OR Orders."Flag3" = @Flag3 OR Orders."Flag4" = @Flag4) AND
             Orders.Order_Date >= '31.03.2013' AND
-            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240
+            COALESCE(Orders.Currency_Id,0) <= 1 AND Orders.DEBIT_ACCOUNT_ID <> 240 AND Orders.DEBIT_ACCOUNT_ID <> 14  AND Orders.DEBIT_ACCOUNT_ID <> 18
         GROUP BY
             Orders.Vendor_Id
     ) AS "R"

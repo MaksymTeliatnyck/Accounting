@@ -1248,7 +1248,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearEndCBox.Location = new System.Drawing.Point(145, 6);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(121, 21);
@@ -1653,7 +1654,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearBeginArchiveCBox.Location = new System.Drawing.Point(100, 9);
             this.yearBeginArchiveCBox.Name = "yearBeginArchiveCBox";
             this.yearBeginArchiveCBox.Size = new System.Drawing.Size(121, 21);
@@ -1751,7 +1753,8 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023"});
             this.yearEndArchiveCBox.Location = new System.Drawing.Point(500, 9);
             this.yearEndArchiveCBox.Name = "yearEndArchiveCBox";
             this.yearEndArchiveCBox.Size = new System.Drawing.Size(121, 21);
