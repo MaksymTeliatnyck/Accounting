@@ -332,7 +332,10 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023",
+            "2024",
+            "2025"});
             this.yearBeginCBox.Location = new System.Drawing.Point(11, 32);
             this.yearBeginCBox.Name = "yearBeginCBox";
             this.yearBeginCBox.Size = new System.Drawing.Size(160, 21);

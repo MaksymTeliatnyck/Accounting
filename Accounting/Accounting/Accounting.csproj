@@ -32,8 +32,8 @@
     <UpdateUrl>\\SBD1\Publish\Accounting\</UpdateUrl>
     <ProductName>АИС %27%27Техвагонмаш%27%27 - Бухгалтерский учёт</ProductName>
     <PublisherName>НПФ %27%27Техвагонмаш%27%27</PublisherName>
-    <MinimumRequiredVersion>1.0.0.454</MinimumRequiredVersion>
-    <ApplicationRevision>454</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.460</MinimumRequiredVersion>
+    <ApplicationRevision>461</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,10 +67,10 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7F25896DC8E037D35CB27D16B28FDE7D50E12F6A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>81A414D5F1502325118310A2436B2951BF92DA49</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Accounting_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Accounting_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -650,6 +650,7 @@
     </None>
     <None Include="Accounting_1_TemporaryKey.pfx" />
     <None Include="Accounting_2_TemporaryKey.pfx" />
+    <None Include="Accounting_3_TemporaryKey.pfx" />
     <None Include="Accounting_TemporaryKey.pfx" />
     <None Include="app.config">
       <SubType>Designer</SubType>

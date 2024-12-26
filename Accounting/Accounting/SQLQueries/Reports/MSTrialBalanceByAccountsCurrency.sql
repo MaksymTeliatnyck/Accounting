@@ -48,30 +48,33 @@ FROM
   FROM
   --StartEnd From Order ----------------------------------------------------------------------------------
     (SELECT
-        o.Contractor_Id,
-        o.Currency_Id,
-        SUM(o.StartOrder) as StartOrder,
-        SUM(o.StartOrderCurrency) as StartOrderCurrency,
-        SUM(o.EndOrder) as EndOrder,
-        SUM(o.EndOrderCurrency) as EndOrderCurrency
-      FROM
-        (SELECT
-            Orders.Vendor_Id AS Contractor_Id,
-            IIF( Orders.Order_Date < @StartDate, Orders.Total_Price, 0) AS StartOrder,
-            IIF( Orders.Order_Date < @StartDate, Orders.Total_Currency, 0) AS StartOrderCurrency,
-            Orders.Total_Price AS EndOrder,
-            Orders.Total_Currency AS EndOrderCurrency,
-            Orders.Currency_Id
-         FROM
-            Orders
-         WHERE
-            Orders.DEBIT_ACCOUNT_ID = 60 AND
-            Orders.Checked = 1 AND
-            Orders.Order_Date >= '31.03.2013' AND
-            Orders.Order_Date <= @EndDate) AS o
-         GROUP BY
-            o.Contractor_Id, o.Currency_Id
-    ) AS DebitOrder
+            o.Contractor_Id,
+            o.Currency_Id,
+            SUM(o.StartOrder) as StartOrder,
+            SUM(o.StartOrderCurrency) as StartOrderCurrency,
+            SUM(o.EndOrder) as EndOrder,
+            SUM(o.EndOrderCurrency) as EndOrderCurrency
+          FROM
+            (SELECT
+                o.Vendor_Id AS Contractor_Id,
+                IIF(o.Order_Date <=@StartDate, o.Total_Price, 0) AS StartOrder,
+                IIF(o.Order_Date <=@StartDate, o.Total_Currency, 0) AS StartOrderCurrency,
+                IIF(v.Price>0, o.Total_Price+v.Price, o.Total_Price) AS EndOrder,
+                o.Total_Currency AS EndOrderCurrency,
+                o.Currency_Id
+             FROM
+                Orders o
+             LEFT JOIN
+                Vat v ON o.ID = v.id
+             WHERE
+                o.DEBIT_ACCOUNT_ID = 60 AND
+                o.Checked = 1 AND
+                o.Order_Date >= '31.03.2013' AND
+                o.Order_Date <=@EndDate) AS o
+             GROUP BY
+                o.Contractor_Id,
+                o.Currency_Id
+        ) AS DebitOrder
 
     --StartEnd From Bank_Payments ---------------------------------------------------------------------------
   FULL JOIN
@@ -160,6 +163,31 @@ FULL JOIN
                 Orders.Id, Orders.Vendor_Id, Orders.Receipt_Num, Orders.Invoice_Num, Orders.Order_Date, Orders.Invoice_Date, Orders.Currency_Id,
                 Orders.Currency_Rate, Nomenclatures.Balance_Account_Id
         UNION ALL
+    
+     	SELECT
+        	o.Vendor_Id AS "Contractor_Id",
+        	v.account_id AS "AccountId",
+        	o.RECEIPT_NUM as "Receipt_Num",
+        	o.ORDER_DATE as "Order_Date",
+        	o.INVOICE_NUM as "Invoice_Num",
+        	o.INVOICE_DATE as "Invoice_Date",
+        	0 AS "PeriodPriceCurrency",
+        	v.price AS "PeriodPrice",
+        	o.Currency_Id as "CurrencyId",
+        	o.Currency_Rate as "Rate",
+        	2 as "FlagDebitCredit"
+      	FROM
+        	Orders o
+      	LEFT JOIN
+        	Vat v ON o.ID = v.id
+      	WHERE
+        	o.Debit_Account_Id = 60 AND
+        	(o.Order_Date BETWEEN @StartDate AND @EndDate) AND
+        	o.Checked = 1 AND v.price>0 AND
+        	o.Order_Date >= '31.03.2013'
+
+
+	UNION ALL
             SELECT
                 b."Contractor_Id" AS Contractor_Id,
                 b."Bank_Account_Id" AS AccountId,

@@ -1092,7 +1092,9 @@
             "2020",
             "2021",
             "2022",
-            "2023"});
+            "2023",
+            "2024",
+            "2025"});
             this.yearEndCBox.Location = new System.Drawing.Point(506, 12);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(121, 21);
@@ -1135,7 +1137,9 @@
             "2020",
             "2021",
             "2022",
-            "2023"});
+            "2023",
+            "2024",
+            "2025"});
             this.yearBeginCBox.Location = new System.Drawing.Point(106, 12);
             this.yearBeginCBox.Name = "yearBeginCBox";
             this.yearBeginCBox.Size = new System.Drawing.Size(121, 21);

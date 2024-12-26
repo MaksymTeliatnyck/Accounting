@@ -34,6 +34,7 @@
             this.orderNumberColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderDateColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderpriceColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.currencyPriceColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.currencyNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,7 +48,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.label9 = new System.Windows.Forms.Label();
-            this.currencyPriceColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             detailsColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGridView)).BeginInit();
@@ -158,6 +158,25 @@
             this.orderpriceColumn.Visible = true;
             this.orderpriceColumn.VisibleIndex = 3;
             this.orderpriceColumn.Width = 99;
+            // 
+            // currencyPriceColumn
+            // 
+            this.currencyPriceColumn.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.currencyPriceColumn.AppearanceHeader.Options.UseFont = true;
+            this.currencyPriceColumn.AppearanceHeader.Options.UseTextOptions = true;
+            this.currencyPriceColumn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.currencyPriceColumn.Caption = "Сума(валюта)";
+            this.currencyPriceColumn.DisplayFormat.FormatString = "### ### ##0.00";
+            this.currencyPriceColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.currencyPriceColumn.FieldName = "CurrencyPrice";
+            this.currencyPriceColumn.Name = "currencyPriceColumn";
+            this.currencyPriceColumn.OptionsColumn.AllowEdit = false;
+            this.currencyPriceColumn.OptionsColumn.AllowFocus = false;
+            this.currencyPriceColumn.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CurrencyPrice", "{0:### ### ##0.00}")});
+            this.currencyPriceColumn.Visible = true;
+            this.currencyPriceColumn.VisibleIndex = 4;
+            this.currencyPriceColumn.Width = 95;
             // 
             // gridColumn1
             // 
@@ -317,25 +336,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 159;
-            // 
-            // currencyPriceColumn
-            // 
-            this.currencyPriceColumn.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.currencyPriceColumn.AppearanceHeader.Options.UseFont = true;
-            this.currencyPriceColumn.AppearanceHeader.Options.UseTextOptions = true;
-            this.currencyPriceColumn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.currencyPriceColumn.Caption = "Сума(валюта)";
-            this.currencyPriceColumn.DisplayFormat.FormatString = "### ### ##0.00";
-            this.currencyPriceColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.currencyPriceColumn.FieldName = "CurrencyPrice";
-            this.currencyPriceColumn.Name = "currencyPriceColumn";
-            this.currencyPriceColumn.OptionsColumn.AllowEdit = false;
-            this.currencyPriceColumn.OptionsColumn.AllowFocus = false;
-            this.currencyPriceColumn.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CurrencyPrice", "{0:### ### ##0.00}")});
-            this.currencyPriceColumn.Visible = true;
-            this.currencyPriceColumn.VisibleIndex = 4;
-            this.currencyPriceColumn.Width = 95;
             // 
             // customerOrdersFm
             // 

@@ -188,7 +188,10 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023",
+            "2024",
+            "2025"});
             this.yearEndCBox.Location = new System.Drawing.Point(490, 14);
             this.yearEndCBox.Name = "yearEndCBox";
             this.yearEndCBox.Size = new System.Drawing.Size(121, 21);
@@ -259,7 +262,10 @@
             "2019",
             "2020",
             "2021",
-            "2022"});
+            "2022",
+            "2023",
+            "2024",
+            "2025"});
             this.yearBeginCBox.Location = new System.Drawing.Point(95, 14);
             this.yearBeginCBox.Name = "yearBeginCBox";
             this.yearBeginCBox.Size = new System.Drawing.Size(121, 21);
@@ -317,8 +323,8 @@
             this.paymentCreditCurrencyColumn,
             this.orderNumberColumn});
             this.calcGridView.GridControl = this.calcGrid;
-            this.calcGridView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.calcGridView.Name = "calcGridView";
+            this.calcGridView.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.calcGridView.OptionsView.ShowAutoFilterRow = true;
             this.calcGridView.OptionsView.ShowFooter = true;
             this.calcGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.calcGridView_KeyUp);
@@ -335,6 +341,7 @@
             this.gridBand4.Columns.Add(this.buyersNameColumn);
             this.gridBand4.Columns.Add(this.orderNumberColumn);
             this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 0;
             this.gridBand4.Width = 341;
             // 
             // buyersNumColumn
@@ -388,6 +395,7 @@
             this.gridBand3.Columns.Add(this.documentDateColumn);
             this.gridBand3.Columns.Add(this.documentNameColumn);
             this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
             this.gridBand3.Width = 177;
             // 
             // documentDateColumn
@@ -427,6 +435,7 @@
             this.gridBand5.Columns.Add(this.balanceNumColumn);
             this.gridBand5.Columns.Add(this.purposeNumColumn);
             this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 2;
             this.gridBand5.Width = 146;
             // 
             // balanceNumColumn
@@ -468,6 +477,7 @@
             this.gridBand1.Columns.Add(this.paymentDebetColumn);
             this.gridBand1.Columns.Add(this.paymentDebetCurrencyColumn);
             this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 3;
             this.gridBand1.Width = 192;
             // 
             // paymentDebetColumn
@@ -514,6 +524,7 @@
             this.gridBand6.Columns.Add(this.paymentCreditColumn);
             this.gridBand6.Columns.Add(this.paymentCreditCurrencyColumn);
             this.gridBand6.Name = "gridBand6";
+            this.gridBand6.VisibleIndex = 4;
             this.gridBand6.Width = 192;
             // 
             // paymentCreditColumn
@@ -558,6 +569,7 @@
             this.gridBand7.Columns.Add(this.currencyNameColumn);
             this.gridBand7.Columns.Add(this.currencyRateColumn);
             this.gridBand7.Name = "gridBand7";
+            this.gridBand7.VisibleIndex = 5;
             this.gridBand7.Width = 96;
             // 
             // currencyNameColumn
@@ -598,6 +610,7 @@
             this.gridBand2.Caption = "Додатково";
             this.gridBand2.Columns.Add(this.commentColumn);
             this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 6;
             this.gridBand2.Width = 324;
             // 
             // commentColumn
