@@ -20,6 +20,7 @@ namespace Accounting
                 return;
             }
 
+
             MainFm = new mainFm();
             Application.Run(MainFm);
 
