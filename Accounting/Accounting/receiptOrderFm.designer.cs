@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(receiptOrderFm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,7 +65,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.addDropBtn = new System.Windows.Forms.Button();
-            this.addMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addMenuStrip = new System.Windows.Forms.ContextMenuStrip();
             this.addBeforeTSMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addAfterTSMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openRBNomenclBtn = new System.Windows.Forms.Button();
@@ -87,7 +86,7 @@
             this.vatChBox = new System.Windows.Forms.CheckBox();
             this.debitCBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
             this.openRBDebitBtn = new System.Windows.Forms.Button();
             this.balanceNumTBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -131,10 +130,6 @@
             this.materialGBox = new System.Windows.Forms.GroupBox();
             this.nomenclatureEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.nomenclatureCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.unitCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.balanceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.priceGBox = new System.Windows.Forms.GroupBox();
             this.orderTotalCurrencyTBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -146,8 +141,6 @@
             this.srnTBox = new System.Windows.Forms.TextBox();
             this.contractorsEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.contractorsEditView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.nameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.srnColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.deliveryGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,13 +156,19 @@
             this.addTtnBtn = new System.Windows.Forms.Button();
             this.deliveryTtnCBox = new DevExpress.XtraEditors.GridLookUpEdit();
             this.deliveryLookGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.accountNumTBox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.ttnCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.priceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.orderDateCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.deliveryNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.deliveryPaymentNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.accountNumTBox = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.nameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.srnColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nomenclatureCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unitCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.balanceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.addMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialGrid)).BeginInit();
             this.materialGBox.SuspendLayout();
@@ -410,9 +409,9 @@
             // supplierProxyTBox
             // 
             this.supplierProxyTBox.Location = new System.Drawing.Point(542, 64);
-            this.supplierProxyTBox.MaxLength = 50;
+            this.supplierProxyTBox.MaxLength = 200;
             this.supplierProxyTBox.Name = "supplierProxyTBox";
-            this.supplierProxyTBox.Size = new System.Drawing.Size(348, 20);
+            this.supplierProxyTBox.Size = new System.Drawing.Size(467, 20);
             this.supplierProxyTBox.TabIndex = 7;
             this.supplierProxyTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.supplierProxyTBox_KeyPress);
             // 
@@ -542,7 +541,7 @@
             this.debitCBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.debitCBox.DropDownWidth = 50;
             this.debitCBox.FormattingEnabled = true;
-            this.debitCBox.Location = new System.Drawing.Point(929, 64);
+            this.debitCBox.Location = new System.Drawing.Point(1015, 62);
             this.debitCBox.Name = "debitCBox";
             this.debitCBox.Size = new System.Drawing.Size(80, 21);
             this.debitCBox.TabIndex = 8;
@@ -552,7 +551,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(927, 48);
+            this.label15.Location = new System.Drawing.Point(1013, 46);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 13);
             this.label15.TabIndex = 103;
@@ -567,7 +566,7 @@
             // 
             // openRBDebitBtn
             // 
-            this.openRBDebitBtn.Location = new System.Drawing.Point(1015, 64);
+            this.openRBDebitBtn.Location = new System.Drawing.Point(1101, 62);
             this.openRBDebitBtn.Name = "openRBDebitBtn";
             this.openRBDebitBtn.Size = new System.Drawing.Size(24, 21);
             this.openRBDebitBtn.TabIndex = 106;
@@ -966,7 +965,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(1049, 48);
+            this.label22.Location = new System.Drawing.Point(1131, 48);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(45, 13);
             this.label22.TabIndex = 139;
@@ -978,7 +977,7 @@
             this.currencyCBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.currencyCBox.DropDownWidth = 50;
             this.currencyCBox.FormattingEnabled = true;
-            this.currencyCBox.Location = new System.Drawing.Point(1051, 64);
+            this.currencyCBox.Location = new System.Drawing.Point(1134, 63);
             this.currencyCBox.Name = "currencyCBox";
             this.currencyCBox.Size = new System.Drawing.Size(61, 21);
             this.currencyCBox.TabIndex = 138;
@@ -1076,50 +1075,6 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // nomenclatureCol
-            // 
-            this.nomenclatureCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nomenclatureCol.AppearanceCell.Options.UseFont = true;
-            this.nomenclatureCol.Caption = "Номенкл. номер";
-            this.nomenclatureCol.FieldName = "NOMENCLATURE";
-            this.nomenclatureCol.Name = "nomenclatureCol";
-            this.nomenclatureCol.OptionsColumn.AllowEdit = false;
-            this.nomenclatureCol.OptionsColumn.AllowFocus = false;
-            this.nomenclatureCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.nomenclatureCol.Visible = true;
-            this.nomenclatureCol.VisibleIndex = 0;
-            this.nomenclatureCol.Width = 200;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameCol.AppearanceCell.Options.UseFont = true;
-            this.nameCol.Caption = "Найменування";
-            this.nameCol.FieldName = "NAME";
-            this.nameCol.Name = "nameCol";
-            this.nameCol.OptionsColumn.AllowEdit = false;
-            this.nameCol.OptionsColumn.AllowFocus = false;
-            this.nameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.nameCol.Visible = true;
-            this.nameCol.VisibleIndex = 1;
-            this.nameCol.Width = 92;
-            // 
-            // unitCol
-            // 
-            this.unitCol.Caption = "Од. вим.";
-            this.unitCol.FieldName = "UNITLOCALNAME";
-            this.unitCol.Name = "unitCol";
-            this.unitCol.Visible = true;
-            this.unitCol.VisibleIndex = 2;
-            // 
-            // balanceCol
-            // 
-            this.balanceCol.Caption = "Бал. рах.";
-            this.balanceCol.FieldName = "NUM";
-            this.balanceCol.Name = "balanceCol";
-            this.balanceCol.Visible = true;
-            this.balanceCol.VisibleIndex = 3;
             // 
             // priceGBox
             // 
@@ -1246,34 +1201,6 @@
             this.contractorsEditView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.contractorsEditView.OptionsView.ShowAutoFilterRow = true;
             this.contractorsEditView.OptionsView.ShowGroupPanel = false;
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameColumn.AppearanceCell.Options.UseFont = true;
-            this.nameColumn.Caption = "Найменування";
-            this.nameColumn.FieldName = "Name";
-            this.nameColumn.Name = "nameColumn";
-            this.nameColumn.OptionsColumn.AllowEdit = false;
-            this.nameColumn.OptionsColumn.AllowFocus = false;
-            this.nameColumn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.nameColumn.Visible = true;
-            this.nameColumn.VisibleIndex = 0;
-            this.nameColumn.Width = 200;
-            // 
-            // srnColumn
-            // 
-            this.srnColumn.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.srnColumn.AppearanceCell.Options.UseFont = true;
-            this.srnColumn.Caption = "Код за ЄДРПОУ";
-            this.srnColumn.FieldName = "Srn";
-            this.srnColumn.Name = "srnColumn";
-            this.srnColumn.OptionsColumn.AllowEdit = false;
-            this.srnColumn.OptionsColumn.AllowFocus = false;
-            this.srnColumn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.srnColumn.Visible = true;
-            this.srnColumn.VisibleIndex = 1;
-            this.srnColumn.Width = 92;
             // 
             // deliveryGrid
             // 
@@ -1476,6 +1403,23 @@
             this.deliveryLookGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.deliveryLookGridView.OptionsView.ShowGroupPanel = false;
             // 
+            // accountNumTBox
+            // 
+            this.accountNumTBox.Location = new System.Drawing.Point(1201, 64);
+            this.accountNumTBox.MaxLength = 50;
+            this.accountNumTBox.Name = "accountNumTBox";
+            this.accountNumTBox.Size = new System.Drawing.Size(173, 20);
+            this.accountNumTBox.TabIndex = 568;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1198, 48);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(83, 13);
+            this.label28.TabIndex = 569;
+            this.label28.Text = "Номер рахунку";
+            // 
             // ttnCol
             // 
             this.ttnCol.Caption = "ТТН";
@@ -1521,22 +1465,77 @@
             this.deliveryPaymentNameCol.VisibleIndex = 4;
             this.deliveryPaymentNameCol.Width = 200;
             // 
-            // accountNumTBox
+            // nameColumn
             // 
-            this.accountNumTBox.Location = new System.Drawing.Point(1118, 64);
-            this.accountNumTBox.MaxLength = 50;
-            this.accountNumTBox.Name = "accountNumTBox";
-            this.accountNumTBox.Size = new System.Drawing.Size(256, 20);
-            this.accountNumTBox.TabIndex = 568;
+            this.nameColumn.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameColumn.AppearanceCell.Options.UseFont = true;
+            this.nameColumn.Caption = "Найменування";
+            this.nameColumn.FieldName = "Name";
+            this.nameColumn.Name = "nameColumn";
+            this.nameColumn.OptionsColumn.AllowEdit = false;
+            this.nameColumn.OptionsColumn.AllowFocus = false;
+            this.nameColumn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.nameColumn.Visible = true;
+            this.nameColumn.VisibleIndex = 0;
+            this.nameColumn.Width = 200;
             // 
-            // label28
+            // srnColumn
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(1115, 48);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(83, 13);
-            this.label28.TabIndex = 569;
-            this.label28.Text = "Номер рахунку";
+            this.srnColumn.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.srnColumn.AppearanceCell.Options.UseFont = true;
+            this.srnColumn.Caption = "Код за ЄДРПОУ";
+            this.srnColumn.FieldName = "Srn";
+            this.srnColumn.Name = "srnColumn";
+            this.srnColumn.OptionsColumn.AllowEdit = false;
+            this.srnColumn.OptionsColumn.AllowFocus = false;
+            this.srnColumn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.srnColumn.Visible = true;
+            this.srnColumn.VisibleIndex = 1;
+            this.srnColumn.Width = 92;
+            // 
+            // nomenclatureCol
+            // 
+            this.nomenclatureCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenclatureCol.AppearanceCell.Options.UseFont = true;
+            this.nomenclatureCol.Caption = "Номенкл. номер";
+            this.nomenclatureCol.FieldName = "NOMENCLATURE";
+            this.nomenclatureCol.Name = "nomenclatureCol";
+            this.nomenclatureCol.OptionsColumn.AllowEdit = false;
+            this.nomenclatureCol.OptionsColumn.AllowFocus = false;
+            this.nomenclatureCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.nomenclatureCol.Visible = true;
+            this.nomenclatureCol.VisibleIndex = 0;
+            this.nomenclatureCol.Width = 200;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameCol.AppearanceCell.Options.UseFont = true;
+            this.nameCol.Caption = "Найменування";
+            this.nameCol.FieldName = "NAME";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.OptionsColumn.AllowEdit = false;
+            this.nameCol.OptionsColumn.AllowFocus = false;
+            this.nameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.nameCol.Visible = true;
+            this.nameCol.VisibleIndex = 1;
+            this.nameCol.Width = 92;
+            // 
+            // unitCol
+            // 
+            this.unitCol.Caption = "Од. вим.";
+            this.unitCol.FieldName = "UNITLOCALNAME";
+            this.unitCol.Name = "unitCol";
+            this.unitCol.Visible = true;
+            this.unitCol.VisibleIndex = 2;
+            // 
+            // balanceCol
+            // 
+            this.balanceCol.Caption = "Бал. рах.";
+            this.balanceCol.FieldName = "NUM";
+            this.balanceCol.Name = "balanceCol";
+            this.balanceCol.Visible = true;
+            this.balanceCol.VisibleIndex = 3;
             // 
             // receiptOrderFm
             // 
